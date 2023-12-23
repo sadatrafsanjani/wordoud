@@ -13,7 +13,9 @@
 		"default_popup": "index.html"
 	},
 	"permissions": [
-		"storage"
+		"storage",
+		"scripting",
+		"activeTab"
 	],
 	"options_page": "option.html"
 }
