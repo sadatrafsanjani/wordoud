@@ -2,17 +2,19 @@
 <html lang="en-US">
     <head>
         <title>Wordoud</title>
+        <link href="vendor/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" />
         <link href="stylesheet/style.css" type="text/css" rel="stylesheet" />
-        <script src="js/lib/jquery-3.7.1.min.js"></script>
+        <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
     </head>
     <body>
-        <div id="word-cloud"></div>
+        <div class="container">
+            <div class="col s12">
+                <button id="btn">Click</button>
+                <div class="center-align valign-wrapper" id="word-cloud"></div>
+            </div>
+        </div>
 
-        <p>
-
-        </p>
-        <button id="btn">Click</button>
-
-        <script src="js/script/script.js"></script>
+        <script src="vendor/materialize/js/materialize.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
