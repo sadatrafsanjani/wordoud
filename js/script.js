@@ -159,4 +159,8 @@ $(function(){
 
     });
 
+    function TFIDFAlgorithm(data){
+
+    }
+
 });
