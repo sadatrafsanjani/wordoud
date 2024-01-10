@@ -130,6 +130,7 @@ $(function(){
 
 
 
+
     document.getElementById('btn').addEventListener('click', function (){
 
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -160,3 +161,106 @@ $(function(){
     });
 
 });
+//
+// package org.city.rtgs;
+//
+//
+// import java.util.*;
+//
+// public class App {
+//
+//     public static double tf(List<String> doc, String term) {
+//     double result = 0;
+//     for (String word : doc) {
+//     if (term.equalsIgnoreCase(word))
+//     result++;
+// }
+// return result / doc.size();
+// }
+//
+// public static double idf(List<List<String>> docs, String term) {
+//     double n = 0;
+//     for (List<String> doc : docs) {
+//         for (String word : doc) {
+//             if (term.equalsIgnoreCase(word)) {
+//                 n++;
+//                 break;
+//             }
+//         }
+//     }
+//     return Math.log(docs.size() / n);
+// }
+//
+// public static double tfIdf(List<String> doc, List<List<String>> docs, String term) {
+//     return tf(doc, term) * idf(docs, term);
+//
+// }
+//
+// public static void main(String[] args) {
+//
+//     String data[] = {"the", "a", "an", "am", "is", "are", "was", "were",
+//         "have", "has", "had", "shall", "will", "be", "each", "many",
+//         "much", "i","we", "he","she","they", "us", "for", "in", "of",
+//         "to", "can", "could", "would", "this", "that", "with", "which",
+//         "when", "what", "it", "there", "therefore"};
+//     Set<String> set = new HashSet<>(Arrays.asList(data));
+//
+//     String text = "In document d, the frequency represents the number of instances of a given word t. " +
+//         "Therefore, we can see that it becomes more relevant when a word appears in the text, " +
+//         "which is rational. Since the ordering of terms is not " +
+//         "significant, we can use a vector to describe the text in the bag of term models. " +
+//         "For each specific term in the paper, there is an entry with the value being the term frequency.";
+//
+//
+//     StringTokenizer stringTokenizer = new StringTokenizer(text, ".");
+//
+//     List<List<String>> docs = new ArrayList<>();
+//
+//     while(stringTokenizer.hasMoreTokens()){
+//
+//         String doc = stringTokenizer.nextToken().trim().replace(",", "");
+//
+//         StringTokenizer tokenizer = new StringTokenizer(doc, " ");
+//
+//         List<String> t = new ArrayList<>();
+//
+//         while(tokenizer.hasMoreTokens()){
+//
+//             String token = tokenizer.nextToken().toLowerCase();
+//
+//             if(!set.contains(token) && token.length() > 2){
+//                 t.add(token);
+//             }
+//         }
+//
+//         docs.add(t);
+//         t = new ArrayList<>();
+//     }
+//
+//     Map<String, Double> map = new HashMap<>();
+//
+//     docs.forEach(doc -> {
+//
+//         doc.forEach(word ->{
+//
+//             double tfidf = tfIdf(doc, docs, word)*100;
+//
+//             if(map.containsKey(word)){
+//
+//                 double value = map.get(word);
+//
+//                 if(tfidf > value){
+//                     map.replace(word, tfidf);
+//                 }
+//             }
+//             else{
+//                 map.put(word, tfidf);
+//             }
+//         });
+//     });
+//
+//     for(String v : map.keySet()){
+//         System.out.println(v + " = " + map.get(v));
+//     }
+// }
+// }
